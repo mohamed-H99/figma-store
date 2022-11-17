@@ -1,0 +1,219 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:root {
+  --clr-primary: #ffc700;
+  --clr-secondary: #10a958;
+  --clr-black: #000000;
+  --clr-white: #ffffff;
+  --transition: 150ms ease-in-out;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  margin: 0;
+}
+
+.container {
+  --container-w: 100%;
+  width: 100%;
+  padding-inline: 1rem;
+  margin-inline: auto;
+  max-width: var(--container-w);
+}
+
+@media (min-width: 48em) {
+  .container {
+    --container-w: 48em;
+  }
+}
+
+@media (min-width: 62em) {
+  .container {
+    --container-w: 62em;
+  }
+}
+
+/* start::footer */
+.main-footer {
+  background-color: var(--footer-clr-bg, #c7b9ff);
+  color: var(--footer-clr-text, #000000);
+  overflow: hidden;
+}
+
+.main-footer a {
+  text-decoration: none;
+  line-height: 1.88;
+  color: inherit;
+  transition: opacity var(--transition);
+  display: inline-block;
+}
+.main-footer a:hover {
+  text-decoration: underline;
+}
+.main-footer a:active {
+  opacity: 0.6;
+}
+
+.main-footer .main-header__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 2.5rem;
+}
+
+.main-footer .footer-links {
+  list-style-type: none;
+  margin: 0 0 1rem;
+  display: block;
+  padding: 0;
+}
+.main-footer .footer-links a {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.main-footer .footer-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main-footer .footer-content__upper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.main-footer .footer-heading {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  letter-spacing: 1px;
+  margin-block: 1rem;
+}
+.main-footer .footer-social {
+  margin-top: auto;
+}
+.main-footer .footer-social a {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.25rem 0;
+  margin-inline-end: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+.main-footer .footer-social a:not(:last-child):after {
+  content: "";
+  --size: 5px;
+  width: var(--size);
+  min-width: var(--size);
+  height: var(--size);
+  border-radius: 9999px;
+  background-color: var(--footer-clr-text, #000000);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.main-footer .footer-ticker {
+  --tape-start-timer: 15s;
+
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  pointer-events: none;
+}
+.main-footer .footer-ticker .tape {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  animation: marquee var(--tape-start-timer) 0s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.main-footer .footer-ticker .shape {
+  color: var(--clr-white, #fff);
+  margin-inline: 0.5rem;
+}
+
+@media (min-width: 48em) {
+  .main-footer .main-header__wrapper {
+    padding-block: 3.75rem;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .main-footer .footer-graphic {
+    margin-inline-end: 4rem;
+  }
+  .main-footer .footer-heading {
+    font-size: 2rem;
+    /* max-width: 10ch; */
+  }
+  .main-footer .footer-social a {
+    font-size: 1.25rem;
+    padding: 1rem 0;
+  }
+  .main-footer .footer-social a:after {
+    margin-inline: 0.35rem;
+  }
+  .main-footer .footer-content__upper {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+  .main-footer .footer-links {
+    margin: 0 0 1rem;
+    margin-inline-start: auto;
+  }
+  .main-footer .footer-ticker {
+    font-size: 1.625rem;
+  }
+  .main-footer .footer-heading {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+}
+@media (min-width: 62em) {
+  .main-footer .footer-social a {
+    font-size: 1.5rem;
+  }
+  .main-footer .footer-social a:after {
+    margin-inline: 0.625rem;
+  }
+}
+/* end::footer */
