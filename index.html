@@ -10,6 +10,13 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap&family=Limelight"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css"
+      integrity="sha512-pJrGHWDVOeiy4UkMtHu0fpD8oLLssFcaW0fsVXUkA1/jDLopa554Z1AZo5SKtekHnnmyat0ipiP0snKDrt0GNg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="css/app.css" />
     <title>The Figma Store | Figma &copy;</title>
   </head>
@@ -19,8 +26,115 @@
     <!-- end::header -->
 
     <!-- start::hero -->
-    <section class="hero">
-      <div class="container"></div>
+    <section class="hero" style="--hero-bg: var(--clr-primary)">
+      <div class="hero__wrapper">
+        <div id="hero-slider" class="swiper">
+          <div class="swiper-wrapper">
+            <!--  -->
+            <div class="swiper-slide">
+              <a href="#" class="hero__box parallelogram">
+                <div class="hero__box-image">
+                  <picture>
+                    <img
+                      src="https://picsum.photos/600/900?random=100"
+                      alt="hero demo image"
+                      width=""
+                      height=""
+                    />
+                  </picture>
+                </div>
+
+                <span class="hero__box-content"> Blue Figma hat </span>
+              </a>
+            </div>
+            <!--  -->
+            <div class="swiper-slide">
+              <a href="#" class="hero__box leftChevron">
+                <div class="hero__box-image">
+                  <picture>
+                    <img
+                      src="https://picsum.photos/600/900?random=101"
+                      alt="hero demo image"
+                      width=""
+                      height=""
+                    />
+                  </picture>
+                </div>
+
+                <span class="hero__box-content"> Blue Figma hat </span>
+              </a>
+            </div>
+            <!--  -->
+            <div class="swiper-slide">
+              <a href="#" class="hero__box hexagon">
+                <div class="hero__box-image">
+                  <picture>
+                    <img
+                      src="https://picsum.photos/600/900?random=102"
+                      alt="hero demo image"
+                      width=""
+                      height=""
+                    />
+                  </picture>
+                </div>
+
+                <span class="hero__box-content"> Blue Figma hat </span>
+              </a>
+            </div>
+            <!--  -->
+            <div class="swiper-slide rightChevron">
+              <a href="#" class="hero__box">
+                <div class="hero__box-image">
+                  <picture>
+                    <img
+                      src="https://picsum.photos/600/900?random=103"
+                      alt="hero demo image"
+                      width=""
+                      height=""
+                    />
+                  </picture>
+                </div>
+
+                <span class="hero__box-content"> Blue Figma hat </span>
+              </a>
+            </div>
+            <!--  -->
+            <div class="swiper-slide rhombus">
+              <a href="#" class="hero__box">
+                <div class="hero__box-image">
+                  <picture>
+                    <img
+                      src="https://picsum.photos/600/900?random=104"
+                      alt="hero demo image"
+                      width=""
+                      height=""
+                    />
+                  </picture>
+                </div>
+
+                <span class="hero__box-content"> Blue Figma hat </span>
+              </a>
+            </div>
+            <!--  -->
+            <div class="swiper-slide trapezoid">
+              <a href="#" class="hero__box">
+                <div class="hero__box-image">
+                  <picture>
+                    <img
+                      src="https://picsum.photos/600/900?random=105"
+                      alt="hero demo image"
+                      width=""
+                      height=""
+                    />
+                  </picture>
+                </div>
+
+                <span class="hero__box-content"> Blue Figma hat </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- end::hero -->
 
@@ -28,7 +142,8 @@
     <section class="collections">
       <div class="container collections__wrapper">
         <h2 class="collections__heading has-floating-shape">
-          Figma's Collection of layers and components for you and your freinds
+          <span>Figma's Collection of</span> <span class="highlight">layers</span> <span>and</span>
+          <span class="highlight">components</span> <span>for you and your freinds</span>
         </h2>
 
         <!-- default row -->
@@ -406,9 +521,38 @@
     <!-- end::footer -->
 
     <!-- scripts -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"
+      integrity="sha512-k2o1KZdvUi59PUXirfThShW9Gdwtk+jVYum6t7RmyCNAVyF9ozijFpvLEWmpgqkHuqSWpflsLf5+PEW6Lxy/wA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="js/app.js"></script>
     <script>
-      const tape1 = new Tape("#tape--footer");
+      if (typeof Tape !== "undefined") {
+        const tape1 = new Tape("#tape--footer");
+      }
+
+      if (typeof Swiper !== "undefined") {
+        const heroSlider = new Swiper("#hero-slider", {
+          slidesPerView: 1.5,
+          spaceBetween: 20,
+          autoplay: true,
+          navigation: false,
+          pagination: false,
+          // centerMode: true,
+          loop: true,
+
+          breakpoints: {
+            768: {
+              slidesPerView: 2.125,
+            },
+            1440: {
+              slidesPerView: 3.125,
+            },
+          },
+        });
+      }
     </script>
   </body>
 </html>

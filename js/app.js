@@ -41,7 +41,7 @@ class Tape {
       tape1.appendChild(textWrapper);
       tape1.appendChild(shapeWrapper);
     });
-    console.log(tape1)
+
     container.appendChild(tape1);
 
     arr.forEach((item) => {
@@ -55,8 +55,6 @@ class Tape {
       tape2.appendChild(textWrapper);
       tape2.appendChild(shapeWrapper);
     });
-
-    console.log({ tape1, tape2 });
 
     container.appendChild(tape2);
   }
