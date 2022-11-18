@@ -63,3 +63,82 @@ class Tape {
     return "&copy;";
   }
 }
+
+(function () {
+  if (typeof document === "undefined" || typeof window === "undefined") {
+    return;
+  }
+
+  // disable (dropdowns) on document free-click
+  document.documentElement.addEventListener("click", (e) => {
+    const insideDropdown = e.target.closest("[data-dropdown]");
+
+    if (!insideDropdown) {
+      setTimeout(disableDropdowns, 100);
+    }
+  });
+
+  // dropdown
+  const dropdownTogglers = document.querySelectorAll("[data-dropdown-toggler]");
+  if (dropdownTogglers.length) {
+    dropdownTogglers.forEach((toggler) => {
+      toggler.addEventListener("click", (e) => {
+        const dropdown = e.target.closest("[data-dropdown");
+        const menu = dropdown.querySelector("[data-dropdown-menu]");
+
+        menu.classList.toggle("show");
+      });
+    });
+  }
+
+  // search box togglers
+  const searchTooglers = document.querySelectorAll("[data-search-toggler]");
+  if (searchTooglers.length) {
+    searchTooglers.forEach((toggler) => {
+      toggler.addEventListener("click", () => {
+        toggleSearchBox();
+      });
+    });
+  }
+
+  // sidemenu togglers
+  const sidemenuTooglers = document.querySelectorAll("[data-sidemenu-toggler]");
+  if (sidemenuTooglers.length) {
+    sidemenuTooglers.forEach((toggler) => {
+      toggler.addEventListener("click", () => {
+        toggleSidemenu();
+      });
+    });
+  }
+
+  // track scrolling direction
+  // window.addEventListener("scroll", () => {
+  //   const oldY = window.scrollY;
+  // });
+})();
+
+function disableDropdowns() {
+  const items = document.querySelectorAll("[data-dropdown]");
+  if (items.length > 0) {
+    items.forEach((dropdown) => {
+      const menu = dropdown.querySelector("[data-dropdown-menu]");
+      menu.classList.remove("show");
+    });
+  }
+}
+
+function toggleSearchBox() {
+  const box = document.querySelector("[data-search-box]");
+  if (!!box) {
+    box.classList.toggle("show");
+    // document.body.classList.toggle("overflow-hidden");
+  }
+}
+
+function toggleSidemenu() {
+  const box = document.querySelector("[data-sidemenu-box]");
+  if (!!box) {
+    box.classList.toggle("show");
+    document.body.classList.toggle("overflow-hidden");
+  }
+}

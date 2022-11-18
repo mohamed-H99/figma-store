@@ -22,7 +22,192 @@
   </head>
   <body>
     <!-- start::header -->
-    <header id="" class="main-header"></header>
+    <header
+      id=""
+      class="main-header"
+      style="
+        --header-bg: var(--clr-primary);
+        --header-bg-2: var(--clr-white);
+        --header-text: var(--clr-black);
+      "
+    >
+      <!-- search -->
+      <div id="" class="search-header" data-search-box>
+        <form id="" class="" action="/" method="get">
+          <input
+            type="search"
+            name=""
+            id=""
+            class="form-control"
+            placeholder="Search..."
+          />
+        </form>
+      </div>
+
+      <nav class="navbar">
+        <div class="container navbar__wrapper">
+          <!-- togglers (visible on mobile view) -->
+          <div class="navbar__togglers mobile-view">
+            <button
+              type="button"
+              class="btn circle stop-propagation"
+              data-sidemenu-toggler
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-menu"
+              >
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="btn border-0 circle stop-propagation"
+              data-search-toggler
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-search"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- links -->
+          <div class="navbar__links desktop-view">
+            <a href="#" class="btn">Shop</a>
+            <a href="#" class="btn">About</a>
+            <button
+              type="button"
+              class="btn border-0 circle stop-propagation"
+              data-search-toggler
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-search"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </div>
+
+          <a href="#" class="navbar__logo">
+            <picture>
+              <source
+                srcset="./images/logo-full.static.svg"
+                media="(min-width: 48em)"
+                type="image/svg+xml"
+                height="18"
+                width="221"
+              />
+              <img
+                src="./images/logo-small.static.png"
+                alt="the figma store"
+                title="Homepage"
+                width=""
+                height="38"
+              />
+            </picture>
+          </a>
+
+          <!-- actions -->
+          <div class="navbar__actions">
+            <div class="dropdown end" data-dropdown>
+              <button
+                type="button"
+                class="dropdown__toggler btn has-arrow"
+                data-dropdown-toggler
+              >
+                <span class="desktop-view">Egypt</span>
+                <span class="mobile-view">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-globe"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                    />
+                  </svg>
+                </span>
+              </button>
+
+              <div class="dropdown__menu" data-dropdown-menu>
+                <a class="dropdown__item" href="javascript:void(0)"
+                  >United State</a
+                >
+                <a class="dropdown__item" href="javascript:void(0)">Spain</a>
+                <a class="dropdown__item" href="javascript:void(0)">Canada</a>
+                <a class="dropdown__item" href="javascript:void(0)">Germany</a>
+              </div>
+            </div>
+
+            <a href="#" class="btn">
+              <span class="desktop-view">Cart</span>
+              <span class="mobile-view">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-shopping-bag"
+                >
+                  <path
+                    d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+                  />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+              </span>
+              <span class="cart-count">0</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
     <!-- end::header -->
 
     <!-- start::hero -->
@@ -32,7 +217,7 @@
           <div class="swiper-wrapper">
             <!--  -->
             <div class="swiper-slide">
-              <a href="#" class="hero__box parallelogram">
+              <a href="#" class="hero__box heptagon">
                 <div class="hero__box-image">
                   <picture>
                     <img
@@ -49,7 +234,7 @@
             </div>
             <!--  -->
             <div class="swiper-slide">
-              <a href="#" class="hero__box leftChevron">
+              <a href="#" class="hero__box zigzag">
                 <div class="hero__box-image">
                   <picture>
                     <img
@@ -99,7 +284,7 @@
               </a>
             </div>
             <!--  -->
-            <div class="swiper-slide rhombus">
+            <div class="swiper-slide pentagon">
               <a href="#" class="hero__box">
                 <div class="hero__box-image">
                   <picture>
@@ -142,8 +327,10 @@
     <section class="collections">
       <div class="container collections__wrapper">
         <h2 class="collections__heading has-floating-shape">
-          <span>Figma's Collection of</span> <span class="highlight">layers</span> <span>and</span>
-          <span class="highlight">components</span> <span>for you and your freinds</span>
+          <span>Figma's Collection of</span>
+          <span class="highlight">layers</span> <span>and</span>
+          <span class="highlight">components</span>
+          <span>for you and your freinds</span>
         </h2>
 
         <!-- default row -->
@@ -519,6 +706,46 @@
       ></div>
     </footer>
     <!-- end::footer -->
+
+    <!-- start::sidemenu -->
+    <div
+      class="sidemenu"
+      style="--clr-bg: var(--clr-white); --clr-text: var(--clr-black)"
+      data-sidemenu-box
+    >
+      <div class="sidemenu__header">
+        <button type="button" data-sidemenu-toggler class="btn circle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-x"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="sidemenu__wrapper">
+        <div class="main-links font-heading">
+          <a href="#">Shop</a>
+          <a href="#">About</a>
+        </div>
+
+        <div class="footer-links font-body">
+          <a href="#">Privact & Terms</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <!-- end::sidemenu -->
 
     <!-- scripts -->
     <script
