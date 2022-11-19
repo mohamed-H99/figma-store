@@ -12,6 +12,7 @@ html {
 :root {
   --clr-primary: #ffc700;
   --clr-secondary: #10a958;
+  --clr-third: #c7b9ff;
   --clr-black: #000000;
   --clr-white: #ffffff;
   --transition: 150ms ease-in-out;
