@@ -409,7 +409,8 @@ body {
 
 .rounded,
 .rounded img {
-  border-radius: 35px;
+  border-radius: 100px;
+  overflow: hidden;
 }
 .zigzag,
 .zigzag img {
@@ -603,6 +604,12 @@ body {
 }
 .collection-card:hover .hover-image {
   opacity: 1;
+  background-image: url("../images/texture-bg.png");
+  background-size: cover;
+  background-position: center;
+}
+.collection-card:nth-child(odd):hover .hover-image {
+  background-image: url("../images/texture-bg-2.png");
 }
 .collection-card__content {
   margin-top: 0.9375rem;
